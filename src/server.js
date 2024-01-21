@@ -1,13 +1,20 @@
-import express from 'express';
+// import express from 'express';
+import dotenv from "dotenv";
+import connectDb from './db/index.js';
 
-const app = express();
-
-app.get("/",(req,res)=>{
-    res.send("Hello World");
+// const app = express();
+dotenv.config({
+    path:"./env"    
 })
 
-const port = 3000;
+connectDb();
 
-app.listen(port,()=>{
-    console.log(`listening to port : ${port}`)
-})
+// app.get("/",(req,res)=>{
+//     res.send("Hello World");
+// })
+
+// const port = 3000;
+
+// app.listen(port,()=>{
+//     console.log(`listening to port : ${port}`)
+// })
